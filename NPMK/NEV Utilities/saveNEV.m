@@ -108,18 +108,18 @@ if exist(FilePath)
     
         if exist(FilePath)
          
-                disp('File already exists!');
-                OverwritePrompt = input('Would you like to overwrite? (Y/N)','s');
-                if strcmpi(OverwritePrompt,'y')
-                    Overwrite = 1;
-                    delete(FilePath);
-                else
-                    while exist(FilePath)
-                        ExistCount = ExistCount + 1;
-                        FilePath = fullfile(NEV.MetaTags.FilePath,[NEV.MetaTags.Filename '-Aligned-',num2str(ExistCount),NEV.MetaTags.FileExt]);
-                    end
+                disp('File already exists, it is being overwritten');
+               % OverwritePrompt = input('Would you like to overwrite? (Y/N)','s');
+                %if strcmpi(OverwritePrompt,'y')
+                Overwrite = 1;
+                delete(FilePath);
+                %else
+                %    while exist(FilePath)
+                %        ExistCount = ExistCount + 1;
+                %        FilePath = fullfile(NEV.MetaTags.FilePath,[NEV.MetaTags.Filename '-Aligned-',num2str(ExistCount),NEV.MetaTags.FileExt]);
+                %    end
                     
-                end
+               % end
             
         end
 end
